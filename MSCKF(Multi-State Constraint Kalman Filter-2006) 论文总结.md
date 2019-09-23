@@ -92,7 +92,7 @@ IMU以时间周期*T*采样*$\omega_m$和$a_m$， 然后这些测量值用来在
 
 <img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568179368404.png" alt="1568179368404" style="zoom:80%;" />
 
-上式中，$P_{II_{{k+1}/k}}$可以通过**李雅普诺夫方程的数值积分？**进行计算：
+上式中，$P_{II_{k+1/k}}$可以通过**李雅普诺夫方程的数值积分？**进行计算：
 
 <img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568180172803.png" alt="1568180172803" style="zoom: 67%;" />
 
@@ -207,4 +207,3 @@ $$
 ![1569223517744](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1569223517744.png)
 
 上式中$\xi=6N+15$是协方差矩阵的维度。
-
