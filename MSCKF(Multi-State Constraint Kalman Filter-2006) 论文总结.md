@@ -1,8 +1,8 @@
 ---
-typora-root-url: MSCKF(Multi-State Constraint Kalman Filter) 论文总结（一）.assets
+
 ---
 
-## MSCKF(Multi-State Constraint Kalman Filter) 论文要点总结（一）
+## MSCKF(Multi-State Constraint Kalman Filter) 论文要点总结
 
 论文：Mourikis A I , Roumeliotis S I . A Multi-State Constraint Kalman Filter for Vision-Aided Inertial Navigation[J]. 2007.
 下面主要对该论文的重点内容进行记录、总结，可能会涉及部分自己的理解。
@@ -14,7 +14,7 @@ typora-root-url: MSCKF(Multi-State Constraint Kalman Filter) 论文总结（一�
 
 文章提出的基于EKF的估计器目标是跟踪IMU固连坐标系（*I*系）相对全局参考坐标系（*G*系）的3D位姿。为了简化地球自转角速度对IMU测量的影响，文章中的全局坐标系选为地心固定坐标系（ECEF系）。算法的整体介绍见**Algorithm 1**。
 
-![](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/Algorithm%201.PNG)
+![](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/Algorithm%201.PNG)
 
 如上图所见，IMU的测量每次都只要可用便即可处理，在EKF里基于此进行状态量和协方差的预测更新（见1.2）。另一方面，每次当一张图像被记录时，在状态向量里增加当前的相机位姿估计量（见1.3）。对状态量进行增广对于处理视觉特征测量非常有必要，因为当EKF更新时，每一个跟踪到的视觉特征测量都会被用来在观测到这些视觉特征的所有相机位姿间建立约束。因此，在任何时刻，EKF的状态向量包含 1）IMU状态，$X_{IMU}$；2）最大$N_{max}$个过去的相机位姿。
 
@@ -22,25 +22,25 @@ typora-root-url: MSCKF(Multi-State Constraint Kalman Filter) 论文总结（一�
 
 IMU的状态向量展开如下所示：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568014948362.png" alt="1568014948362" style="zoom: 67%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568014948362.png" alt="1568014948362" style="zoom: 67%;" />
 
 上式中，q是单位四元数，描述了*G*系到*I*系得旋转，$p_I^G$和$v_I^G$表示IMU相对于*G*系的位置和速度。$b_g$和$b_a$是3*1的向量，分别表示影响陀螺仪和加速度计测量的零偏。IMU的零偏建模为随机游走过程，通过高斯白噪声向量$n_{wg}$和$n_{wa}$进行推导。同时，可得IMU的误差状态可定义为：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568017155218.png" alt="1568017155218" style="zoom:67%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568017155218.png" alt="1568017155218" style="zoom:67%;" />
 
 对于位置、速度、和零偏，使用标准的相加误差定义（误差$\breve{x} = 变量x - 估计值\hat{x}$）。但是，对于四元数误差定义是不同的。特殊的是，$q = \delta q \bigotimes \hat{q}$， *q*是四元数，$\delta q$是四元数的估计值误差， $\hat{q}$是四元数的估计值。该表达中，$\bigotimes$表示四元数乘法。误差四元数可定义为”
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568018218590.png" alt="1568018218590" style="zoom:67%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568018218590.png" alt="1568018218590" style="zoom:67%;" />
 
 直观可见，四元数误差表示了真实姿态到估计的姿态间的微小旋转。由于姿态对应三个自由度，使用$\delta\theta$可以对姿态误差进行最小维度描述。
 
 假设在*k*时刻， 有*N*个相机位姿包含在EKF的状态向量里，则该向量具有下面的格式：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568018476379.png" alt="1568018476379" style="zoom:67%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568018476379.png" alt="1568018476379" style="zoom:67%;" />
 
 上式中，$\hat{q}和\hat{p}$分别表示*i = 1...N*个序列的相机姿态和位置估计值。则EKF的误差状态向量同时可以表示为：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568018626110.png" alt="1568018626110" style="zoom:67%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568018626110.png" alt="1568018626110" style="zoom:67%;" />
 
 #### 1.2 状态预测/递推
 
@@ -50,75 +50,75 @@ IMU的状态向量展开如下所示：
 
 IMU状态的连续时间变化方程如下：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568115150324.png" alt="1568115150324" style="zoom:67%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568115150324.png" alt="1568115150324" style="zoom:67%;" />
 
 上式中，$a^G$表示全局坐标系下的载体运动加速度，$\omega=[\omega_x, \omega_y, \omega_z]^T$是IMU坐标系下的旋转角速度，且：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568115293194.png" alt="1568115293194" style="zoom: 80%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568115293194.png" alt="1568115293194" style="zoom: 80%;" />
 
 $\omega_m$和$a_m$分别表示陀螺仪和加速度计的测量值，其可以表示为：
 
-![1568115449181](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568115449181.png)
+![1568115449181](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568115449181.png)
 
 上述公式中，C(.)表示一个旋转矩阵，描述了两个坐标系间的旋转关系， $n_a$和$n_g$分别表示加速度计和陀螺仪的测量噪声，此处建模为零均值的高斯白噪声模型。需要注意的是上述IMU的测量模型中包含了地球自转（$\omega_G$）的影响。而且，局部坐标系下的加速度计测量值中也包含了重力加速度$g^G$。
 
 将期望操作符（$-$）用在IMU的状态传播模型中，可得连续IMU状态估计值的递推等式：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568115993894.png" alt="1568115993894" style="zoom:80%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568115993894.png" alt="1568115993894" style="zoom:80%;" />
 
 为了简化计算，C、$\hat{a}$和$\hat\omega$的表达可以用下式：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568117717234.png" alt="1568117717234" style="zoom:80%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568117717234.png" alt="1568117717234" style="zoom:80%;" />
 
 所以，IMU误差状态的线性连续时变模型为：
 
-![1568117789920](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568117789920.png)
+![1568117789920](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568117789920.png)
 
 上述方程中$n_{IMU}=[n_g^T,n_{\omega g}^T, n_a^T, n_{\omega a}^T]$分别是系统噪声。$n_{IMU}$和$Q_{IMU}$依赖于传感器标定阶段离线计算得到的IMU噪声特性。最终，$F$和$G$可表示为：
 
-![1568121836444](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568121836444.png)
+![1568121836444](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568121836444.png)
 
 $I_3$为3x3的单位矩阵，且G为：
 
-![1568121894993](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568121894993.png)
+![1568121894993](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568121894993.png)
 
 ##### 1.2.2 离散时间模型
 
 IMU以时间周期*T*采样*$\omega_m$和$a_m$， 然后这些测量值用来在EKF里进行状态预测更新。每次接收到1个新得IMU测量值时，IMU得状态估计采用五阶龙格-库塔法进行数值积分。而且，EKF协方差矩阵也会同步更新。基于此，采用下面的分块矩阵描述和计算协方差：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568122742159.png" alt="1568122742159" style="zoom:80%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568122742159.png" alt="1568122742159" style="zoom:80%;" />
 
 上式中$P_{II_{k/k}}$是IMU状态的15$\times$15维协方差矩阵，$P_{CC_{k/k}}$是相机位姿估计状态量6N$\times$6N的协方差矩阵， $P_{IC_{k/k}}$是IMU状态和相机位姿估计量误差间的协方差矩阵。基于以上定义，整个协方差预测更新方程为：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568179368404.png" alt="1568179368404" style="zoom:80%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568179368404.png" alt="1568179368404" style="zoom:80%;" />
 
 上式中，$P_{II_{{k+1}/k}}$可以通过**李雅普诺夫方程的数值积分？**进行计算：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568180172803.png" alt="1568180172803" style="zoom: 67%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568180172803.png" alt="1568180172803" style="zoom: 67%;" />
 
 基于$P_{II_{k/k}}$的初始值，在时间区间$(t_k, t_k+T)$里进行数值积分。状态转移矩阵$\Phi(t_k, t_k+T)$可以通过差分方程的数值积分同样计算：
 
-![1568181399063](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568181399063.png)
+![1568181399063](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568181399063.png)
 
 #### 1.3 状态增广
 
 当记录一帧新的图片时，基于IMU的位姿估计可以计算相机的位姿估计量：
 
-![1568181534992](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568181534992.png)
+![1568181534992](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568181534992.png)
 
 上式中$q_I^C$时I系和相机系间的旋转四元数，$P_C^I$是相机相对I系的位置关系，这两个量都是已知的，可以通过标定得到。当前的相机位姿估计量添加到状态量里时，对应的EKF协方差矩阵也需要增广：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568181832780.png" alt="1568181832780" style="zoom:80%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568181832780.png" alt="1568181832780" style="zoom:80%;" />
 
 雅各比$J$可由IMU和相机间的位姿转换关系等式得到：
 
-![1568181940603](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568181940603.png)
+![1568181940603](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568181940603.png)
 
 #### 1.4 测量模型
 
 接着是被用来进行状态估计的系统测量模型，这是本篇论文的主要贡献工作。由于使用EKF进行状态估计，为了构造一个测量模型，首先需要定义个残差**r**，该残差与状态误差$\tilde{X}$成正比，一般形式为：
 
-![1568182626073](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568182626073.png)
+![1568182626073](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568182626073.png)
 
 在该表达式中，**H**式测量的雅各比矩阵，噪声项需要时零均值，与状态误差无关的白噪声，这是EKF的算法框架要求的。
 
@@ -126,11 +126,11 @@ IMU以时间周期*T*采样*$\omega_m$和$a_m$， 然后这些测量值用来在
 
 作者提出的测量模型描述的情况为：一组$M_j$个相机位姿（$\bar{q}_G^{C_i}， p_{C_i}^G$）， $i\in{S_j}$观测到同一个单独的特征$f_i$。每一个特征的$M_j$观测可以通过下面模型描述：
 
-![1568183962459](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568183962459.png)
+![1568183962459](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568183962459.png)
 
 上式中，$n_i^{(j)}$是2$\times$1的图像噪声向量，其协方差为$R_i^{(j)}=\sigma_{im}^2I_2$。特征的位置表示在相机坐标系中为：
 
-![1568185205235](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568185205235.png)
+![1568185205235](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568185205235.png)
 
 上式中，$p_{f_i}^G$是3D特征点在全局坐标系下的位置，由于这是未知的，在算法的第一步使用最小二乘得到其估计值。这通过使用测量值$z_i^{(j)}$，和对应时刻的相机位姿滤波估计值计算（详细见附录）
 
@@ -140,29 +140,29 @@ r_i^{(j)}=z_i^{(j)}-{\hat{z}}_i^{(j)}
 $$
 上式中$z_i^{(j)}$直接可以根据相机的测量值得到，${\hat{z}}_i^{(j)}$可以根据下式得到：
 
-![1568186354634](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568186354634.png)
+![1568186354634](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568186354634.png)
 
 线性化上述等式（1）中对相机位姿和特征位置的估计，可以得到：
 
-![1568186726875](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568186726875.png)
+![1568186726875](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568186726875.png)
 
 上式中，$H_{X_i}^{(j)}$和$H_{f_i}^{(j)}$分别表示相机测量值相对状态量和特征位置的雅各比，$\tilde{p}_{f_i}^G$表示特征$f_i$的位置估计误差。雅各比矩阵见下：
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568187190418.png" alt="1568187190418" style="zoom:80%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568187190418.png" alt="1568187190418" style="zoom:80%;" />
 
-![1568187240346](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568187240346.png)
+![1568187240346](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568187240346.png)
 
-<img src="/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568187264836.png" alt="1568187264836" style="zoom:80%;" />
+<img src="MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568187264836.png" alt="1568187264836" style="zoom:80%;" />
 
 通过将所有的$M_j$个特征测量的残差堆起来，便可以得到单个特征对多个相机位姿的约束形成的残差观测方程：
 
-![1568187425463](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568187425463.png)
+![1568187425463](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568187425463.png)
 
 由于不同图像中的特征观测时独立的，所以协方差矩阵$n^{(j)}$是$R^{(j)}=\sigma^2I_{2M_j}$。
 
 需要注意的是，由于状态估计量X被用来计算特征点位置估计（见附录），两者间建立了联系。所以特征点的位置误差$\tilde{p}_{f_i}^G$间接被状态量的误差$\tilde{X}$进行了修正。因此，上述的残差格式与前述的EKF中的残差观测格式不同，所以该残差方程还不能直接在EKF更新中使用。为了解决这个问题，作者定义了一个残差$r_o^{(j)}$，将$r^{(j)}$投影到$H_f^{(j)}$的左零空间中。具体而言，定义一个矩阵A，表示U阵，其列构成$H_f$左零空间的基向量。可得：
 
-![1568188242723](/../MSCKF(Multi-State%20Constraint%20Kalman%20Filter)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89.assets/1568188242723.png)
+![1568188242723](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1568188242723.png)
 
 由于$2M_j\times3$的矩阵$H_f^{(j)}$是列满秩的，所以其左零空间的维数是$2M_j-3$。所以$r_o^{(j)}$是一个$(2M_j-3)\times1$的向量。该误差独立于3D特征的坐标位置，而且因此EKF更新可以基于此进行。上式定义了一个在特征$f_i$处观测到的所有相机位姿构成的线性约束关系。此表示所有$M_j$状态的可用测量信息$z_i^{(j)}$，和继而计算得到的EKF更新是最优的，处理由于线性化引起的精度损失。
 
@@ -188,23 +188,23 @@ $$
 
 由于这些特征测量在统计意义上是相互独立的，噪声向量$n_o^{(j)}$是互不相关的。因此，噪声的协方差矩阵是$R_o=\sigma_{im}^2I_d$，$d=\sum_{j=1}^L(2Mj-3)$是残差$r_o$的维度。实际中可能出现的一个问题是，$d$会非常大。比如，如果在10个相机位姿处都看到10个特征，残差的维度是170。为了减小EKF更新的计算复杂度，对$Hx$进行QR分解。具体为：
 
-![1569222234137](/1569222234137.png)
+![1569222234137](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1569222234137.png)
 
 上式中$Q1$和$Q2$是单位矩阵，其列分别构成$H_x$的基础范围和零空间，而且$T_H$是上三角矩阵。基于此，可得：
 
-![1569222542013](/1569222542013.png)
+![1569222542013](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1569222542013.png)
 
 由上一个等式可见，将残差$r_0$投影到$H_x$的基向量空间，并保持利用所有的有用测量信息。残差$Q_2^Tr_o$只是噪声，可以被直接完全去掉。基于此，采用下式进行EKF更新：
 
-![1569222924408](/1569222924408.png)
+![1569222924408](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1569222924408.png)
 
 上述表达中，$n_n=Q_1^Tn_o$是一个噪声向量，其协方差等于$R_n=Q_1^TR_oQ_1=\sigma_{im}^2I_r$，r是$Q_1$的列数。EKF的更新过程中的卡尔曼增益计算为：
 
-![1569223479826](/1569223479826.png)
+![1569223479826](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1569223479826.png)
 
 最后，这个状态协方差可基于下式更新：
 
-![1569223517744](/1569223517744.png)
+![1569223517744](MSCKF(Multi-State%20Constraint%20Kalman%20Filter-2006)%20%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93.assets/1569223517744.png)
 
 上式中$\xi=6N+15$是协方差矩阵的维度。
 
