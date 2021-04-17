@@ -7,7 +7,7 @@ Beihang University | Bachelor | Detection, Guidance and Control | 2011-2015
 
 ### SKILLS
 **Programming**: C/C++, Python, MATLAB/Simulink, ROS  
-**Professional**: Motion estimation, Multi-sensor fusion, SLAM/VIO
+**Professional**: Motion estimation, Multi-sensor fusion, SLAM/VIO  
 **Language**: Chinese/English  
 
 ### WORK EXPERIENCE
