@@ -23,13 +23,13 @@ Develop and optimize the indoor positioning system of VR navigation.
 Calibration and compensation of airborne sensor errors (Gyroscope, Accelerometer, Magnetic, Barometer, GPS, RTK, etc.).    
 Develop and optimize the performance of MEMS INS in the communication exception of RTK and the situation of high maneuver flight.    
 **Vision-based Localization System of UAV | Jun.2018-Apr.2019**  
-Build SLAM development platform, and research and test the performance and robustness of orb-slam2, okvis, vins-fusion.
+Build SLAM development platform, and research and test the performance and robustness of orb-slam2, okvis, vins-fusion.  
 Build hardware platform, and develop and test the vision-based autonomous landing navigation system.  
 **Indoor 3D Scanning Robot | May.2019-Aug.2019**  
 Auto-calibration of Internal and external parameters of robot sensors (lidar, camera, imu).  
 Optimize the Multi-sensor fusion localization based on lidar-imu SLAM.  
 **Indoor VR Positioning and Navigation System | Jul.2019-Mar.2020**  
-Develop indoor positioning subsystems, including PDR positioning，iBeacon positioning, GPS, compass, semantic map, etc.
+Develop indoor positioning subsystems, including PDR positioning，iBeacon positioning, GPS, compass, semantic map, etc.  
 Achieve the indoor multi-sensor fusion positioning system based on particle filter and extended Kalman filter.
 
 ### PAPER & PATENTS
