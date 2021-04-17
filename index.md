@@ -1,45 +1,45 @@
-## Xu Yang
-
+### Xu Yang
 Baoji City, Shaanxi Province | +86-185xxxx9485 | yangxu_buaa@163.com 
 
-## EDUCATION
+### EDUCATION
 Beihang University | Master | Instrumentation Engineering | 2015-2018
 
 Beihang University | Bachelor | Detection, Guidance and Control | 2011-2015
-## SKILLS
+### SKILLS
 **Programming**: C/C++, Python, MATLAB/Simulink, and familiar with Embedded system and ROS
 
 **Professional**: 6-DOF motion estimation, Multi-sensor fusion, SLAM/VIO, Computer vision, Sensor calibration
 
 **Language**: Chinese/English
 
-## WORK EXPERIENCE
+### WORK EXPERIENCE
 JD Logistics, UAV Department | Algorithm Engineer | Mar.2018-Apr.2019
--	Develop and optimize the integrated navigation system
--	Research the autonomous vision-based localization and navigation
+  - Develop and optimize the integrated navigation system
+  - Research the autonomous vision-based localization and navigation
 
 Beijing Aibee Technology Co., Ltd, Robot Department | Algorithm Engineer | May.2019-Current
--	Optimize the localization system of 3D scanning robot
--	Develop and optimize the indoor positioning system of VR navigation
-## PROJECTS
-1.MEMS Integrated Navigation System of UAV                                Mar.2018-Dec.2018
--	Calibration and compensation of airborne sensor errors (Gyroscope, Accelerometer, Magnetic, Barometer, GPS, RTK, etc.) 
--	Develop and optimize the performance of MEMS INS in the communication exception of RTK and the situation of high maneuver flight
+  - Optimize the localization system of 3D scanning robot
+  - Develop and optimize the indoor positioning system of VR navigation
+### PROJECTS
+1.MEMS Integrated Navigation System of UAV | Mar.2018-Dec.2018
+  - Calibration and compensation of airborne sensor errors (Gyroscope, Accelerometer, Magnetic, Barometer, GPS, RTK, etc.) 
+  - Develop and optimize the performance of MEMS INS in the communication exception of RTK and the situation of high maneuver flight
 
-2.Vision-based Localization System of UAV                                 Jun.2018-Apr.2019
--	Build SLAM development platform, and research and test the performance and robustness of orb-slam2, okvis, vins-fusion
--	Build hardware platform, and develop and test the vision-based autonomous landing navigation system
+2.Vision-based Localization System of UAV | Jun.2018-Apr.2019
+  - Build SLAM development platform, and research and test the performance and robustness of orb-slam2, okvis, vins-fusion
+  - Build hardware platform, and develop and test the vision-based autonomous landing navigation system
 
-3.Indoor 3D Scanning Robot                                                May.2019-Aug.2019
--	Auto-calibration of Internal and external parameters of robot sensors (lidar, camera, imu)
--	Optimize the Multi-sensor fusion localization based on lidar-imu SLAM
+3.Indoor 3D Scanning Robot | May.2019-Aug.2019
+  - Auto-calibration of Internal and external parameters of robot sensors (lidar, camera, imu)
+  - Optimize the Multi-sensor fusion localization based on lidar-imu SLAM
 
-4.Indoor VR Positioning and Navigation System                              Jul.2019-Mar.2020
--	Develop indoor positioning subsystems, including PDR positioning，iBeacon positioning, GPS, compass, semantic map, etc.
--	Achieve the indoor multi-sensor fusion positioning system based on particle filter and extended Kalman filter
+4.Indoor VR Positioning and Navigation System | Jul.2019-Mar.2020
+  - Develop indoor positioning subsystems, including PDR positioning，iBeacon positioning, GPS, compass, semantic map, etc.
+  - Achieve the indoor multi-sensor fusion positioning system based on particle filter and extended Kalman filter
 
 ### PAPER/PATENTS
 **Paper:**
+
 [1]	Yanshun Zhang, **Xu Yang**, et al. The Standing Calibration Method of MEMS Gyro Bias for Autonomous Pedestrian Navigation System[J]. Journal of Navigation, 2017, 70(3): 607-617. (SCI，Q1，The first student author)
 
 [2]	Xu Yang, Zhanqing Wang, et al. Dynamic leveling method under independent work mode for airborne remote sensing stabilized platform[C]. Chinese Control Conference, 2017: 5020-5024.
@@ -49,9 +49,10 @@ Beijing Aibee Technology Co., Ltd, Robot Department | Algorithm Engineer | May.2
 [4]	**Xu Yang**, Zhanqing Wang, et al. A Rapid Alignment Method under Large Azimuth Misalignment Angle for Strap-down Gyrocompass [J]. Ship Engineering, 2018(05):83-87. 
 
 **Patent:**
+
 [1]	Yanshun Zhang, **Xu Yang**, et al. Method and Device for Measuring Horizontal Tilt Angle of Multifunctional Debugging Platform in Complicated Environment [P], CN107063181B. (Authorized，The first student author)
 
 [2]	Yanshun Zhang, **Xu Yang**, et al. A Synthetic Measurement Method of Pedestrian Step Length Based on Height and Motion Characteristics [P], CN106767807A. (Authorized，The first student author)
 
-### HONORS/Awards
+### HONORS/AWARDS
 Outstanding Graduates of Beijing, Outstanding Cadres of The Communist Youth League of Beijing.
