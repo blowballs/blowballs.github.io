@@ -14,7 +14,7 @@ Beihang University | Bachelor | Detection, Guidance and Control | 2011-2015
 **JD Logistics, UAV Department | Algorithm Engineer | Mar.2018-Apr.2019**  
 Develop and optimize the integrated navigation system.    
 Research the autonomous vision-based localization and navigation.    
-**Beijing Aibee Technology Co., Ltd, Robot Department | Algorithm Engineer | May.2019-Current**  
+**Beijing Aibee Technology Co., Ltd, Robot Department | Algorithm Engineer | May.2019-Present**  
 Optimize the localization system of 3D scanning robot.  
 Develop and optimize the indoor positioning system of VR navigation.  
 
@@ -25,10 +25,10 @@ Develop and optimize the performance of MEMS INS in the communication exception 
 **Vision-based Localization System of UAV | Jun.2018-Apr.2019**  
 Build SLAM development platform, and research and test the performance and robustness of orb-slam2, okvis, vins-fusion.  
 Build hardware platform, and develop and test the vision-based autonomous landing navigation system.  
-**Indoor 3D Scanning Robot | May.2019-Aug.2019**  
+**Indoor 3D Scanning Robot | May.2019-Present**  
 Auto-calibration of Internal and external parameters of robot sensors (lidar, camera, imu).  
 Optimize the Multi-sensor fusion localization based on lidar-imu SLAM.  
-**Indoor VR Positioning and Navigation System | Jul.2019-Mar.2020**  
+**Indoor VR Positioning and Navigation System | Sep.2019-Present**  
 Develop indoor positioning subsystems, including PDR positioning，iBeacon positioning, GPS, compass, semantic map, etc.  
 Achieve the indoor multi-sensor fusion positioning system based on particle filter and extended Kalman filter.
 
@@ -39,8 +39,10 @@ Achieve the indoor multi-sensor fusion positioning system based on particle filt
 [3]	**Xu Yang**, Jin Huang, et al. The Instantaneous Linear Motion Information Measurement Method Based on Inertial Sensors for Ships[C]. American Institute of Physics Conference Series. 2018, 1967(3).  
 [4]	**Xu Yang**, Zhanqing Wang, et al. A Rapid Alignment Method under Large Azimuth Misalignment Angle for Strap-down Gyrocompass [J]. Ship Engineering, 2018(05):83-87.   
 **PATENTS:**  
-[1]	Yanshun Zhang, **Xu Yang**, et al. Method and Device for Measuring Horizontal Tilt Angle of Multifunctional Debugging Platform in Complicated Environment [P], CN107063181B. (Authorized，The first student author)  
-[2]	Yanshun Zhang, **Xu Yang**, et al. A Synthetic Measurement Method of Pedestrian Step Length Based on Height and Motion Characteristics [P], CN106767807A. 
+[1]	**Xu Yang**, Jiabin Guo, et al. Positioning method, device and system [P], CN111294746A. (Authorized, the first author)  
+[2]	Yanshun Zhang, **Xu Yang**, et al. Method and Device for Measuring Horizontal Tilt Angle of Multifunctional Debugging Platform in Complicated Environment [P], CN107063181B. (Authorized, the first student author)  
+[3]	Yanshun Zhang, **Xu Yang**, et al. Height and motion property based comprehensive measuring method of pedestrian step length [P], CN106767807A. 
 
 ### HONORS & AWARDS
-Outstanding Graduates of Beijing, Outstanding Cadres of The Communist Youth League of Beijing.
+Outstanding Graduates of Beijing.
+Outstanding Cadres of The Communist Youth League of Beijing.
