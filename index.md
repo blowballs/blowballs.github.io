@@ -32,8 +32,8 @@ Optimize the Multi-sensor fusion localization based on lidar-imu SLAM.
 Develop indoor positioning subsystems, including PDR positioning，iBeacon positioning, GPS, compass, semantic map, etc.  
 Achieve the indoor multi-sensor fusion positioning system based on particle filter and extended Kalman filter.
 
-### PAPER & PATENTS
-**PAPER:**  
+### PAPERS & PATENTS
+**PAPERS:**  
 [1]	Yanshun Zhang, **Xu Yang**, et al. The Standing Calibration Method of MEMS Gyro Bias for Autonomous Pedestrian Navigation System[J]. Journal of Navigation, 2017, 70(3): 607-617. (SCI，Q1，The first student author)  
 [2]	**Xu Yang**, Zhanqing Wang, et al. Dynamic leveling method under independent work mode for airborne remote sensing stabilized platform[C]. Chinese Control Conference, 2017:5020-5024.  
 [3]	**Xu Yang**, Jin Huang, et al. The Instantaneous Linear Motion Information Measurement Method Based on Inertial Sensors for Ships[C]. American Institute of Physics Conference Series. 2018, 1967(3).  
