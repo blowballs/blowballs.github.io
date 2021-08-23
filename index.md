@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-[Chinese Version](https://github.com/poplar1993/poplar1993.github.io/blob/master/XuYang-Resume.pdf).
+### 中文版本
+[Chinese Version](https://github.com/poplar1993/poplar1993.github.io/blob/master/XuYang-Resume.pdf)
 ### PERSONAL INFO
 Baoji City, Shaanxi Province | +86-185xxxx9485 | yangxu_buaa@163.com   
 
@@ -18,7 +19,7 @@ Beihang University | Bachelor | Detection, Guidance and Control | 2011-2015
 **JD Logistics, UAV Department | Algorithm Engineer | Mar.2018-Apr.2019**  
 Develop and optimize the integrated navigation system.    
 Research the autonomous vision-based localization and navigation.    
-**Beijing Aibee Technology Co., Ltd, Robot Department | Algorithm Engineer | May.2019-Present**  
+**Beijing Aibee Technology Co., Ltd, Robot Department | Algorithm Engineer | May.2019-Sep.2021**  
 Optimize the localization system of 3D scanning robot.  
 Develop and optimize the indoor positioning system of VR navigation.  
 
@@ -29,10 +30,10 @@ Develop and optimize the performance of MEMS INS in the communication exception 
 **Vision-based Localization System of UAV | Jun.2018-Apr.2019**  
 Build SLAM development platform, and research and test the performance and robustness of orb-slam2, okvis, vins-fusion.  
 Build hardware platform, and develop and test the vision-based autonomous landing navigation system.  
-**Indoor 3D Scanning Robot | May.2019-Present**  
+**Indoor 3D Scanning Robot | May.2019-Sep.2021**  
 Auto-calibration of Internal and external parameters of robot sensors (lidar, camera, imu).  
 Optimize the Multi-sensor fusion localization based on lidar-imu SLAM.  
-**Indoor VR Positioning and Navigation System | Sep.2019-Present**  
+**Indoor VR Positioning and Navigation System | Sep.2019-Sep.2021**  
 Develop indoor positioning subsystems, including PDR positioning，iBeacon positioning, GPS, compass, semantic map, etc.  
 Achieve the indoor multi-sensor fusion positioning system based on particle filter and extended Kalman filter.
 
