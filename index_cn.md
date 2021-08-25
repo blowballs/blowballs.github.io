@@ -1,4 +1,4 @@
-[Englist Version](./)
+[Englis Version](./)
 
 ### 个人信息
 陕西省宝鸡市|+86-185xx9485 |yangxu_buaa@163.com   
