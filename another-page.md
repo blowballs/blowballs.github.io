@@ -1,8 +1,3 @@
----
-layout: default
----
-_yay_
-
 [back](./)
 
 [Englist Version](https://poplar1993.github.io/)
