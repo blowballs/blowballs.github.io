@@ -1,6 +1,6 @@
 **杨旭** 
 
-[Englis Version](https://github.com/poplar1993/poplar1993.github.io/blob/master/index.md)
+[English Version](https://github.com/poplar1993/poplar1993.github.io/blob/master/index.md)
 
 ### 个人信息
 
