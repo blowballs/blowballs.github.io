@@ -1,4 +1,4 @@
-[中文版本](https://github.com/poplar1993/poplar1993.github.io/blob/master/XuYang-Resume.pdf)
+[中文版本](https://github.com/poplar1993/poplar1993.github.io/blob/master/index_cn.md)
 ### PERSONAL INFO
 Baoji City, Shaanxi Province | +86-185xxxx9485 | yangxu_buaa@163.com   
 
