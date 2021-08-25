@@ -1,4 +1,4 @@
-[中文版本](./another-page.html)
+[中文版本](./index_cn.html)
 ### PERSONAL INFO
 Baoji City, Shaanxi Province | +86-185xxxx9485 | yangxu_buaa@163.com   
 
