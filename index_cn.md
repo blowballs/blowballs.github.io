@@ -38,7 +38,7 @@
 
 ### 学术成果
 **论文：**  
-[1]	Yanshun Zhang, **Xu Yang**, et al. The Standing Calibration Method of MEMS Gyro Bias for Autonomous Pedestrian Navigation System[J]. Journal of Navigation, 2017, 70(3): 607-617. (SCI，Q1，The first student author)  
+[1]	Yanshun Zhang, **Xu Yang**, et al. The Standing Calibration Method of MEMS Gyro Bias for Autonomous Pedestrian Navigation System[J]. Journal of Navigation, 2017, 70(3): 607-617. (SCI)  
 [2]	**Xu Yang**, Zhanqing Wang, et al. Dynamic leveling method under independent work mode for airborne remote sensing stabilized platform[C]. Chinese Control Conference, 2017:5020-5024.  
 [3]	**Xu Yang**, Jin Huang, et al. The Instantaneous Linear Motion Information Measurement Method Based on Inertial Sensors for Ships[C]. American Institute of Physics Conference Series. 2018, 1967(3).  
 [4]	**Xu Yang**, Zhanqing Wang, et al. A Rapid Alignment Method under Large Azimuth Misalignment Angle for Strap-down Gyrocompass [J]. Ship Engineering, 2018(05):83-87.   
