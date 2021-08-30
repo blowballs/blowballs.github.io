@@ -1,6 +1,6 @@
 [中文版本](./index_cn.html)
 ### PERSONAL INFO
-Baoji City, Shaanxi Province | +86-185xxxx9485 | yangxu_buaa@163.com   
+Xi'an City, Shaanxi Province | +86-185xxxx9485 | yangxu_buaa@163.com   
 
 ### EDUCATION
 Beihang University | Master | Instrumentation Engineering | 2015-2018  
